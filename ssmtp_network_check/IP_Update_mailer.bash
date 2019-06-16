@@ -75,7 +75,7 @@ INTERNAL_FUNC_SENDMAIL()
 	$(df -h)
 "
 
-echo "$MSG_CONTENT" | ssmtp "$DESTINATION_EMAIL"
+echo "$MSG_CONTENT" | /usr/sbin/ssmtp "$DESTINATION_EMAIL"
 
 }
 

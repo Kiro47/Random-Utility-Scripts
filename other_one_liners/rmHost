@@ -1,0 +1,4 @@
+#!/bin/bash
+# Removes line entry from ~/.ssh/known_hosts
+# for host identifier changes
+sed -ie "$@"d ~/.ssh/known_hosts

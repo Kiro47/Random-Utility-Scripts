@@ -4,11 +4,11 @@ import os
 import multiprocessing
 
 def downloadFile (url):
-    filenameStart = url.rfind("/") 
+    filenameStart = url.rfind("/")
     filename = url[filenameStart:]
     print("Downloading: [" + isbn + "] => " + url)
     try:
-        urllib.request.urlretrieve(url, f"papers/{filename}.pdf")
+        urllib.request.urlretrieve(url, f"papers/{filename}")
     except Exception as error:
         print(f"error downloading isbn [{filename}], URL: {url}")
         print(error)
@@ -27,7 +27,7 @@ with open("doiURL.txt") as txtFile:
             isbn = line.split('/')[-1:][0]
             line = line.replace("http://doi.org/", \
                     "https://link.springer.com/content/pdf/")
-            url = line + ".pdf" 
+            url = line + ".pdf"
             urls.append(url)
 
 print(urls)
